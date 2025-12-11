@@ -1,0 +1,185 @@
+
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Book Club</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo-circle" aria-hidden="true">BC</div>
+        <h1 class="site-title">Book Club</h1>
+      </div>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="library.html">Library</a></li>
+          <li><a href="joinclub.html" id="joinBtn">Join Club</a></li>
+          <li><a href="#random" id="randomPickerBtn">Random Book</a></li>
+          <li><a href="bookmarks.html" id="bookmarksNav">Bookmarks</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="search">
+          <input id="searchInput" type="search" placeholder="Search books, authors..." aria-label="Search books">
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="auth.html" id="">Login/Signup</a></li>
+            </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero container">
+      <div class="hero-left">
+        <h2>Welcome to <span class="accent">Book Club</span></h2>
+        <p class="lead">Find great reads, join discussions, bookmark favourites, and discover random gems.</p>
+        <div class="hero-cta">
+          <button id="joinNow" class="btn">Join the Club</button>
+          <button id="pickRandom" class="btn ghost">Surprise me</button>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="quote-card" id="quoteCard" aria-live="polite">
+          <p class="quote">“Loading quote...”</p>
+          <p class="quote-author"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest Books Carousel -->
+    <section class="container section" id="latest">
+      <h3 class="section-title">Latest Releases</h3>
+      <div class="carousel" id="carousel">
+        <button class="carousel-btn prev" aria-label="Previous">❮</button>
+        <div class="carousel-track" id="carouselTrack">
+          <!-- cards injected by JS -->
+        </div>
+        <button class="carousel-btn next" aria-label="Next">❯</button>
+      </div>
+    </section>
+
+    <!-- Trending & High-Rated -->
+    <section class="container section grid-two" id="library">
+      <div>
+        <h3 class="section-title">Trending Now</h3>
+        <div class="grid" id="trendingGrid">
+          <!-- inserted by JS -->
+        </div>
+      </div>
+      <div>
+        <h3 class="section-title">High Rated</h3>
+        <div class="grid" id="highRatedGrid">
+          <!-- inserted by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="container section" id="reviews">
+      <h3 class="section-title">Book Reviews</h3>
+      <div class="reviews-grid" id="reviewsGrid">
+        <!-- sample review cards -->
+        <article class="review-card">
+          <div class="avatar">A</div>
+          <div class="review-body">
+            <div class="review-meta">
+              <strong>Ammu R.</strong>
+              <div class="stars">★★★★☆</div>
+            </div>
+            <p>A beautiful exploration of character, pacing kept me hooked. Highly recommended!</p>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div class="avatar">J</div>
+          <div class="review-body">
+            <div class="review-meta">
+              <strong>Jay</strong>
+              <div class="stars">★★★★★</div>
+            </div>
+            <p>The world-building in this book is exceptional — I'll reread it for sure.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Feedback form -->
+    <section class="container section" id="feedback">
+      <h3 class="section-title">Give Book Feedback</h3>
+      <form id="feedbackForm" class="feedback-form" novalidate>
+        <div class="form-row">
+          <label>
+            Name
+            <input type="text" id="fbName" required />
+          </label>
+          <label>
+            Email
+            <input type="email" id="fbEmail" required />
+          </label>
+        </div>
+        <div class="form-row">
+          <label style="flex:1">
+            Book name
+            <input type="text" id="fbBook" required />
+          </label>
+        </div>
+        <div class="form-row">
+          <label style="flex:1">
+            Feedback
+            <textarea id="fbText" rows="5" required></textarea>
+          </label>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn">Submit Feedback</button>
+          <button type="reset" class="btn ghost">Reset</button>
+        </div>
+        <p id="fbMessage" class="form-message" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <!-- Random Book Picker display - Made BIGGER -->
+    <section class="container section" id="random">
+      <h3 class="section-title">Random Book Picker</h3>
+      <div class="random-display large" id="randomDisplay">
+        <div class="book-large" id="randomBookCard">
+          <!-- injected by JS -->
+        </div>
+        <div class="random-actions">
+          <button id="randomBtn" class="btn large">Pick a Random Book</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <h4>Thank you for visiting</h4>
+        <p>Follow us on social media</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Twitter">TW</a>
+          <a href="#" aria-label="Facebook">FB</a>
+        </div>
+      </div>
+      <div>
+        <p class="muted">©️ <span id="currentYear"></span> Book Club — All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js" defer></script>
+</body>
+</html>
