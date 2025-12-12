@@ -1,0 +1,151 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Book Club — Library</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <div class="logo">BC</div>
+        <div class="brand-text">
+          <h1>Book Club</h1>
+          <small class="muted">Library</small>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="library.html" class="nav-link active">Library</a>
+        <a href="joinclub.html" class="nav-link">Join Club</a>
+        <a href="bookmarks.html" class="nav-link">Bookmarks</a>
+        <a href="auth.html" class="nav-link">Login / Signup</a>
+      </nav>
+
+      <div class="header-right">
+        <input id="libSearch" class="search" type="search" placeholder="Search the library..." />
+        <a href="auth.html" class="btn small">Sign in</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container section">
+      <h2>Library</h2>
+      <p class="muted">Browse all available books. Click a book to view details or bookmark it for later.</p>
+
+      <div class="controls">
+        <select id="sortSelect" class="select">
+          <option value="recent">Sort: Recent</option>
+          <option value="rating">Sort: Rating</option>
+          <option value="title">Sort: Title</option>
+        </select>
+      </div>
+
+      <section class="genre-section">
+    <h2>Book Genres</h2>
+
+    <div class="genre-grid">
+        <button class="genre-card" onclick="showBooks('fantasy')">Fantasy</button>
+        <button class="genre-card" onclick="showBooks('romance')">Romance</button>
+        <button class="genre-card" onclick="showBooks('mystery')">Mystery</button>
+        <button class="genre-card" onclick="showBooks('scifi')">Science Fiction</button>
+        <button class="genre-card" onclick="showBooks('thriller')">Thriller</button>
+        <button class="genre-card" onclick="showBooks('horror')">Horror</button>
+        <button class="genre-card" onclick="showBooks('novel')">Novel</button>
+        <button class="genre-card" onclick="showBooks('non-fiction')">Non-Fiction</button>
+        <button class="genre-card" onclick="showBooks('autobiography')">Autobiography</button>
+        <button class="genre-card" onclick="showBooks('poetry')">Poetry</button>
+        <button class="genre-card" onclick="showBooks('psychology')">Psychology</button>
+        <button class="genre-card" onclick="showBooks('comedy')">Comedy</button>
+        <button class="genre-card" onclick="showBooks('kids')">Kids</button>
+        <button class="genre-card" onclick="showBooks('dark')">Dark</button>
+        <button class="genre-card" onclick="showBooks('manga')">Manga</button>
+        <button class="genre-card" onclick="showBooks('manhwa')">Manhwa</button>
+        <button class="genre-card" onclick="showBooks('classic')">Classic</button>
+        <button class="genre-card" onclick="showBooks('spy')">Spy</button>
+        <button class="genre-card" onclick="showBooks('dystopian')">Dystopian</button>
+        <button class="genre-card" onclick="showBooks('crime')">Crime</button>
+    </div>
+</section>
+
+<!-- BOOK LISTS -->
+<section class="books-section">
+
+    <div class="books" id="fantasy">
+        <h2>Fantasy Books</h2>
+        <div><img src="fantasy-img/fantasy1 copy.jpeg" alt=""></div>
+        <div><img src="fantasy-img/fantasy2 copy.jpg" alt=""></div>
+        <div><img src="fantasy-img/fantasy3 copy.jpeg" alt=""></div>
+        <div><img src="fantasy-img/fantasy4 copy.jpeg" alt=""></div>
+        <div><img src="fantasy-img/fantasy5 copy.jpeg" alt=""></div>
+        <div><img src="fantasy-img/fantasy6 copy.jpg" alt=""></div>
+        <div><img src="fantasy-img/fantasy7 copy.jpg" alt=""></div>
+    </div>
+
+    <div class="books" id="romance">
+        <h2>Romance Books</h2>
+        <ul>
+            <li>The Fault in Our Stars</li>
+            <li>Pride and Prejudice</li>
+            <li>Me Before You</li>
+        </ul>
+    </div>
+
+    <div class="books" id="mystery">
+        <h2>Mystery Books</h2>
+        <ul>
+            <li>Sherlock Holmes</li>
+            <li>The Girl with the Dragon Tattoo</li>
+        </ul>
+    </div>
+
+    <div class="books" id="scifi">
+        <h2>Science Fiction Books</h2>
+        <ul>
+            <li>Dune</li>
+            <li>Ready Player One</li>
+        </ul>
+    </div>
+
+    <div class="books" id="thriller">
+        <h2>Thriller Books</h2>
+        <ul>
+            <li>Gone Girl</li>
+            <li>The Da Vinci Code</li>
+        </ul>
+    </div>
+
+    <div class="books" id="horror">
+        <h2>Horror Books</h2>
+        <ul>
+            <li>It – Stephen King</li>
+            <li>The Haunting of Hill House</li>
+        </ul>
+    </div>
+
+</section>
+
+
+      <div id="libraryGrid" class="grid library-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <h4>Thanks for exploring</h4>
+        <p class="muted">Find something to love</p>
+      </div>
+      <div class="muted">©️ <span id="yearLib"></span> Book Club</div>
+    </div>
+  </footer>
+
+  <script src="library.js" defer></script>
+</body>
+</html>

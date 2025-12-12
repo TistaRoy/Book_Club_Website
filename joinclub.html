@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Book Club — Join</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <div class="logo">BC</div>
+        <div class="brand-text">
+          <h1>Book Club</h1>
+          <small class="muted">Join Club</small>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="library.html" class="nav-link">Library</a>
+        <a href="joinclub.html" class="nav-link active">Join Club</a>
+        <a href="bookmarks.html" class="nav-link">Bookmarks</a>
+        <a href="auth.html" class="nav-link">Login / Signup</a>
+      </nav>
+
+      <div class="header-right">
+        <a href="auth.html" class="btn small">Sign in</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container section">
+      <div class="card join-card">
+        <h2>Become a member</h2>
+        <p class="lead">Join our community to get curated monthly picks, participate in discussions and access members-only events.</p>
+
+        <form id="joinForm" class="form">
+          <input id="jcName" placeholder="Full name" required />
+          <input id="jcEmail" placeholder="Email address" type="email" required />
+          <input id="jcInterests" placeholder="Your reading interests (comma separated)" />
+          <div class="form-row">
+            <button class="btn" type="submit">Join Now</button>
+            <a href="auth.html" class="btn ghost">Login</a>
+          </div>
+          <p id="joinMsg" class="muted small"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <h4>See you inside</h4>
+        <p class="muted">Welcome aboard</p>
+      </div>
+      <div class="muted">©️ <span id="yearJoin"></span> Book Club</div>
+    </div>
+  </footer>
+
+  <script src="joinclub.js" defer></script>
+</body>
+</html>

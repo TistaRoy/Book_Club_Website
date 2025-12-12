@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Book Club — Bookmarks</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <div class="logo">BC</div>
+        <div class="brand-text">
+          <h1>Book Club</h1>
+          <small class="muted">Bookmarks</small>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="library.html" class="nav-link">Library</a>
+        <a href="joinclub.html" class="nav-link">Join Club</a>
+        <a href="bookmarks.html" class="nav-link active">Bookmarks</a>
+        <a href="auth.html" class="nav-link">Login / Signup</a>
+      </nav>
+
+      <div class="header-right">
+        <a href="auth.html" class="btn small">Sign in</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container section">
+      <h2>Your Bookmarks</h2>
+      <p class="muted">Saved books are kept in your browser (localStorage). Remove or open them from here.</p>
+
+      <div id="bmGrid" class="grid library-grid"></div>
+      <div class="form-row">
+        <button id="clearAll" class="btn ghost">Clear all bookmarks</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <h4>Saved for later</h4>
+        <p class="muted">Happy reading</p>
+      </div>
+      <div class="muted">©️ <span id="yearBm"></span> Book Club</div>
+    </div>
+  </footer>
+
+  <script src="bookmarks.js" defer></script>
+</body>
+</html>
