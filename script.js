@@ -3,8 +3,11 @@
    ========================================================= */
 
 const latestBooks = [
-  // Amazon covers (more reliable)
-  { title: "The Woman in Me", author: "Britney Spears", img: "https://m.media-amazon.com/images/I/71EdySouz+L._AC_UF1000,1000_QL80_.jpg" },
+  { 
+  title: "The Fury", 
+  author: "Alex Michaelides", 
+  img: "https://m.media-amazon.com/images/I/81MrDXLIknL._AC_UF1000,1000_QL80_.jpg" 
+},
   { title: "Fourth Wing", author: "Rebecca Yarros", img: "https://m.media-amazon.com/images/I/91FhN5FkOJL._AC_UF1000,1000_QL80_.jpg" },
   { title: "Iron Flame", author: "Rebecca Yarros", img: "https://m.media-amazon.com/images/I/81CqxZ7XKRL._AC_UF1000,1000_QL80_.jpg" },
   { title: "Outlive", author: "Peter Attia", img: "https://m.media-amazon.com/images/I/71hvK3jZJAL._AC_UF1000,1000_QL80_.jpg" },
@@ -80,12 +83,6 @@ async function injectBooksWithCovers(containerId, books, className = "book-card-
       <img src="${finalImg}" alt="${book.title} cover" class="book-cover" />
       <h3 class="book-title">${book.title}</h3>
       <p class="book-author">${book.author}</p>
-      <button class="btn small bookmark-btn" 
-              data-title="${book.title}" 
-              data-author="${book.author}" 
-              data-img="${finalImg}">
-        Bookmark
-      </button>
     `;
 
     container.appendChild(card);
@@ -104,11 +101,49 @@ function addBookmark(title, author, img) {
   }
 }
 
+const inspirationPhrases = [
+  "A book is a dream you hold in your hands.",
+  "Read. Dream. Repeat.",
+  "Get lost in pages, find yourself in stories.",
+  "Books turn muggles into wizards of words.",
+  "Where stories live, readers thrive.",
+  "Your next favourite book is waiting.",
+  "Books wash away from the soul the dust of everyday life."
+];
+
+function startInspirationRotation() {
+  const box = document.getElementById("inspirationBox");
+  if (!box) return;
+
+  let i = 0;
+
+  const cycle = () => {
+    box.classList.remove("show");
+
+    setTimeout(() => {
+      box.textContent = inspirationPhrases[i % inspirationPhrases.length];
+      box.classList.add("show");
+      i++;
+    }, 400);
+  };
+
+  cycle();
+  setInterval(cycle, 3500);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  startInspirationRotation();
+});
+
+
+
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("bookmark-btn")) {
     const { title, author, img } = e.target.dataset;
     addBookmark(title, author, img);
   }
+  startInspirationRotation();
+
 });
 
 /* =========================================================
@@ -225,4 +260,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Quotes
   startQuoteRotation();
+  document.getElementById("joinNow")?.addEventListener("click", () => {
+  window.location.href = "joinclub.html";
+});
+
 });

@@ -586,3 +586,408 @@ h2 {
   .library-book { min-width: 140px; max-width: 150px; }
   .library-book img { height: 190px; }
 }
+
+
+
+.inspiration-box {
+  font-size: 1.4rem;
+  font-style: italic;
+  text-align: center;
+  padding: 30px;
+  background: #f7f4ee;
+  border-radius: 12px;
+  color: #444;
+  line-height: 1.6;
+  opacity: 0;
+  transition: opacity .6s ease-in-out;
+}
+
+.inspiration-box.show {
+  opacity: 1;
+}
+
+
+/* Make book cards bigger everywhere */
+.book-card-item, 
+.carousel-item, 
+.library-book {
+  width: 220px !important;   /* default was ~150–180 */
+  min-width: 220px !important;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+/* Make covers larger */
+.book-cover {
+  width: 100%;
+  height: 300px !important;   /* increase from ~220 */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Increase grid spacing */
+.grid, .carousel-track {
+  gap: 20px !important;
+}
+
+/* Remove background from navbar links */
+.main-nav a {
+    background: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Remove hover background too */
+.main-nav a:hover {
+    background: none !important;
+    color: #6c63ff;   /* optional hover color */
+}
+
+
+/* NAVBAR FIX — clean, wide, visible links */
+
+.site-header {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 12px 0;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* LOGO + BOOK CLUB NAME */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-circle {
+    width: 48px;
+    height: 48px;
+    background: #6c63ff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 20px;
+    color: #fff;
+}
+
+.site-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* NAV LINKS */
+.main-nav ul {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.main-nav a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #333;
+}
+
+.main-nav a:hover {
+    color: #6c63ff;
+}
+
+/* RIGHT SIDE SEARCH + LOGIN */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search input {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 200px;
+}
+
+/* Fix extra nav block */
+.header-actions nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+/* ============================
+   🌙 GLOBAL DARK THEME
+   ============================ */
+
+:root {
+    --bg-main: #0e0e0f;
+    --bg-card: #1a1a1d;
+    --bg-soft: #161618;
+    --text-main: #f2f2f2;
+    --text-muted: #b5b5b5;
+    --accent: #6c63ff; /* purple accent */
+    --border-color: #2a2a2d;
+}
+
+/* BODY */
+body {
+    background: var(--bg-main);
+    color: var(--text-main);
+}
+
+/* HEADINGS */
+h1, h2, h3, h4, h5 {
+    color: var(--text-main);
+}
+
+/* PARAGRAPH */
+p, .muted, small {
+    color: var(--text-muted);
+}
+
+/* ============================
+   🌙 NAVBAR DARK MODE
+   ============================ */
+.site-header {
+    background: var(--bg-soft);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.site-title {
+    color: var(--text-main);
+}
+
+.logo-circle {
+    background: var(--accent);
+    color: #fff;
+}
+
+.main-nav a {
+    color: var(--text-muted);
+}
+
+.main-nav a:hover {
+    color: var(--accent);
+}
+
+/* ============================
+   🌙 SEARCH BAR
+   ============================ */
+.search input {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+}
+
+.search input::placeholder {
+    color: #777;
+}
+
+/* ============================
+   🌙 HERO SECTION
+   ============================ */
+.hero {
+    background: var(--bg-main);
+}
+
+.quote-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+}
+
+/* ============================
+   🌙 BOOK CARDS
+   ============================ */
+
+.book-card,
+.carousel-item,
+.book-card-item,
+.library-book {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-main) !important;
+}
+
+.book-card h3,
+.book-title {
+    color: var(--text-main);
+}
+
+.book-author {
+    color: var(--text-muted);
+}
+
+/* BOOK IMAGES */
+.book-cover {
+    border-radius: 6px;
+}
+
+/* ============================
+   🌙 CAROUSEL BUTTONS
+   ============================ */
+.carousel-btn,
+.scroll-btn {
+    background: var(--bg-card);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+}
+
+.carousel-btn:hover,
+.scroll-btn:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+/* ============================
+   🌙 FORMS
+   ============================ */
+.feedback-form input,
+.feedback-form textarea {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+}
+
+.feedback-form input::placeholder,
+.feedback-form textarea::placeholder {
+    color: #888;
+}
+
+/* ============================
+   🌙 BUTTONS
+   ============================ */
+.btn {
+    background: var(--accent);
+    color: #fff;
+}
+
+.btn.ghost {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+}
+
+.btn.ghost:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+/* ============================
+   🌙 FOOTER
+   ============================ */
+.site-footer {
+    background: #111;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-color);
+}
+
+.site-footer h4 {
+    color: var(--text-main);
+}
+
+
+/* ===== CENTERED HERO LAYOUT ===== */
+.center-hero {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 1rem;
+}
+
+.hero-centered {
+  max-width: 700px;
+  margin: auto;
+}
+
+/* MAIN TITLE */
+.main-heading {
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+/* TAGLINE */
+.hero-tagline {
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* LARGE JOIN BUTTON */
+.join-large {
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  margin-bottom: 2.5rem;
+}
+
+/* QUOTE CARD stays centered */
+.quote-card {
+  margin: auto;
+  margin-top: 1rem;
+}
+
+/* NAVBAR SPACING IMPROVEMENTS */
+.main-nav ul {
+  display: flex;
+  gap: 2.5rem; /* increase spacing between nav links */
+  align-items: center;
+}
+
+.main-nav a {
+  padding: 0.5rem 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+/* Make navbar taller and more breathable */
+.site-header {
+  padding: 1.2rem 0;
+}
+
+.header-inner {
+  gap: 2rem; /* space between logo and nav */
+}
+
+
+.socials a {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+
+.socials a:hover {
+  color: var(--accent-color);
+}
+.main-nav ul {
+  display: flex;
+  gap: 2.5rem; /* SPACE BETWEEN NAV LINKS */
+  align-items: center;
+}
+
+.main-nav a {
+  color: #ffffff;     /* white text */
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.main-nav a:hover {
+  color: #9bc3ff; /* light blue hover */
+}
+
+
+

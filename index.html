@@ -6,7 +6,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Book Club</title>
-  
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  integrity="sha512-DTOQ9RWCH3ppGqcMa9l8pYJgD8z1l5gFfN6t8bD+pWvY2fRvW2k7qoB8eS2I5YxLLv7q6l1XlV681YFfC+KVig=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -15,17 +22,15 @@
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
       <div class="brand">
-        <div class="logo-circle" aria-hidden="true">BC</div>
-        <h1 class="site-title">Book Club</h1>
-      </div>
+    <h1 class="site-title">PagesAhead</h1>
+</div>
+
 
       <nav class="main-nav" aria-label="Main navigation">
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="library.html">Library</a></li>
-          <li><a href="joinclub.html" id="joinBtn">Join Club</a></li>
           <li><a href="#random" id="randomPickerBtn">Random Book</a></li>
-          <li><a href="bookmarks.html" id="bookmarksNav">Bookmarks</a></li>
         </ul>
       </nav>
 
@@ -43,51 +48,69 @@
   </header>
 
   <main id="home">
-    <section class="hero container">
-      <div class="hero-left">
-        <h2>Welcome to <span class="accent">Book Club</span></h2>
-        <p class="lead">Find great reads, join discussions, bookmark favourites, and discover random gems.</p>
-        <div class="hero-cta">
-          <button id="joinNow" class="btn">Join the Club</button>
-          <button id="pickRandom" class="btn ghost">Surprise me</button>
-        </div>
-      </div>
-      <div class="hero-right">
-        <div class="quote-card" id="quoteCard" aria-live="polite">
-          <p class="quote">“Loading quote...”</p>
-          <p class="quote-author"></p>
-        </div>
-      </div>
-    </section>
+    <section class="hero container center-hero">
+  <div class="hero-centered">
+    
+    <h1 class="main-heading">PagesAhead</h1>
 
-    <!-- Latest Books Carousel -->
+    <p class="hero-tagline">
+      Find great reads, join discussions, bookmark favourites, and discover random gems.
+    </p>
+
+    <button id="joinNow" class="btn join-large">Join the Club</button>
+
+    <div class="quote-card" id="quoteCard" aria-live="polite">
+      <p class="quote">“Loading quote...”</p>
+      <p class="quote-author"></p>
+    </div>
+
+  </div>
+</section>
+
+
     <section class="container section" id="latest">
-      <h3 class="section-title">Latest Releases</h3>
-      <div class="carousel" id="carousel">
-        <button class="carousel-btn prev" aria-label="Previous">❮</button>
-        <div class="carousel-track" id="carouselTrack">
-          <!-- cards injected by JS -->
-        </div>
-        <button class="carousel-btn next" aria-label="Next">❯</button>
-      </div>
-    </section>
+  <h3 class="section-title">Latest Releases</h3>
+
+  <div class="carousel">
+    <button class="carousel-btn prev" id="prev1" aria-label="Previous">❮</button>
+
+    <div class="carousel-track" id="carouselTrack1">
+      <!-- injected by JS -->
+    </div>
+
+    <button class="carousel-btn next" id="next1" aria-label="Next">❯</button>
+  </div>
+</section>
 
 
-    <!-- Trending Section -->
 <section class="container section" id="trendingSection">
   <h3 class="section-title">Trending Now</h3>
-  <div class="grid" id="trendingGrid">
-    <!-- injected by JS -->
+
+  <div class="carousel">
+    <button class="carousel-btn prev" id="prev2">❮</button>
+
+    <div class="carousel-track" id="carouselTrack2">
+      <!-- injected by JS -->
+    </div>
+
+    <button class="carousel-btn next" id="next2">❯</button>
   </div>
 </section>
 
-<!-- High Rated Section -->
 <section class="container section" id="highRatedSection">
   <h3 class="section-title">High Rated</h3>
-  <div class="grid" id="highRatedGrid">
-    <!-- injected by JS -->
+
+  <div class="carousel">
+    <button class="carousel-btn prev" id="prev3">❮</button>
+
+    <div class="carousel-track" id="carouselTrack3">
+      <!-- injected by JS -->
+    </div>
+
+    <button class="carousel-btn next" id="next3">❯</button>
   </div>
 </section>
+
 
 
     <!-- Trending & High-Rated -->
@@ -170,17 +193,20 @@
     </section>
 
     <!-- Random Book Picker display - Made BIGGER -->
-    <section class="container section" id="random">
-      <h3 class="section-title">Random Book Picker</h3>
-      <div class="random-display large" id="randomDisplay">
-        <div class="book-large" id="randomBookCard">
-          <!-- injected by JS -->
-        </div>
-        <div class="random-actions">
-          <button id="randomBtn" class="btn large">Pick a Random Book</button>
-        </div>
-      </div>
-    </section>
+  <section class="container section" id="random">
+  <h3 class="section-title">Discover a Book at Random</h3>
+
+  <div class="random-display large" id="randomDisplay">
+    <div class="book-large" id="randomBookCard">
+      <!-- injected by JS -->
+    </div>
+    <div class="random-actions">
+      <button id="randomBtn" class="btn large">Pick a Random Book</button>
+    </div>
+  </div>
+</section>
+
+
   </main>
 
   <footer class="site-footer">
